@@ -1,0 +1,40 @@
+<template>
+  <!-- Now we are going to allow users get access to the GitHub data witha form -->
+  <form @submit.prevent="saveToken">
+      <div>
+        <label for="githubToken">Github Token</label>
+        <br />
+        <input id="githubToken" v-model="githubToken" />
+      </div>
+      <div>
+        <input type="submit" value="Save Token" />
+        <button type="button" @click="clearToken">Clear Token</button>
+      </div>
+  </form>
+</template>
+
+<script>
+export default {
+    name: "GitHubTokenForm",
+    data() {
+        return{
+            githubToken: "",
+        };
+    },
+    beforeMount(){
+        this.githubToken = localStorage.getItem("github-token");
+    },
+    methods: {
+        saveToken() {
+            localStorage.setItem("github-token", this.githubToken);
+        },
+        clearToken() {
+            localStorage.clear();
+        },
+    },
+};
+</script>
+
+<style>
+
+</style>

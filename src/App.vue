@@ -1,17 +1,27 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <h1>GithubApp</h1>
+    <GitHubTokenForm />
+    <User />
+    <Repos />
+  </div>
+  
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import GitHubTokenForm from './components/GitHubTokenForm.vue';
+import Repos from './components/Repos.vue';
+import User from './components/User.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    GitHubTokenForm,
+    Repos,
+    User,
+  },
+};
+// public/rest.js-16.43.1
 </script>
 
 <style>
@@ -24,3 +34,4 @@ export default {
   margin-top: 60px;
 }
 </style>
+
